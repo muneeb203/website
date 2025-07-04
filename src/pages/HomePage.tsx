@@ -75,7 +75,7 @@ const HomePage: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -91,19 +91,9 @@ const HomePage: React.FC = () => {
                   {service.description}
                 </p>
                 {index === 0 ? (
-                  <div className="flex flex-col gap-2">
-                    <button
-                      className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg"
-                      onClick={() => {
-                        window.open('https://vapi.ai?demo=true&shareKey=8712621a-8f2d-4f8b-b6bc-642062b84c38&assistantId=be5fadd5-a470-45d2-b2ff-9bd295d4cedc', '_blank');
-                      }}
-                    >
-                      Call our Assistant
-                    </button>
-                    <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg">
-                      Chat on Whatsapp with AI Assistant
-                    </button>
-                  </div>
+                  <button className="text-primary dark:text-dark-primary hover:text-primary/80 font-semibold flex items-center gap-2 transition-colors duration-200">
+                    Learn More <ArrowRight className="w-4 h-4" />
+                  </button>
                 ) : (
                   <button className="text-primary dark:text-dark-primary hover:text-primary/80 font-semibold flex items-center gap-2 transition-colors duration-200">
                     Learn More <ArrowRight className="w-4 h-4" />
