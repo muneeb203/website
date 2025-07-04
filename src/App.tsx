@@ -9,6 +9,21 @@ import ContactPage from './pages/ContactPage';
 function App() {
   const [currentPage, setCurrentPage] = React.useState('home');
 
+  React.useEffect(() => {
+    const handler = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail && customEvent.detail.page) {
+        setCurrentPage(customEvent.detail.page);
+      }
+    };
+    window.addEventListener('navigate', handler as EventListener);
+    return () => window.removeEventListener('navigate', handler as EventListener);
+  }, []);
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':

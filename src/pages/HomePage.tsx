@@ -46,22 +46,22 @@ const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-secondary transition-colors duration-300">
+    <div className="min-h-screen bg-dark-secondary transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 to-secondary/10 dark:from-dark-primary/10 dark:to-dark-secondary">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-dark-primary/10 to-dark-secondary">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-secondary dark:text-dark-primary mb-6 animate-slide-up">
+          <h1 className="text-4xl md:text-6xl font-bold text-dark-primary mb-6 animate-slide-up">
             AI-Driven Solutions for
-            <span className="text-primary dark:text-dark-primary block">Modern Businesses</span>
+            <span className="text-dark-primary block">Modern Businesses</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-fade-in">
           We build cutting-edge AI solutions that transform ideas into reality. Your ambition, powered by our expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
+            <button className="bg-dark-primary text-dark-secondary px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
               View Our Work
             </button>
-            <button className="border-2 border-primary text-primary dark:text-dark-primary dark:border-dark-primary hover:bg-primary hover:text-white dark:hover:bg-dark-primary dark:hover:text-dark-secondary px-8 py-3 rounded-lg font-semibold transition-all duration-200">
+            <button className="border-2 border-dark-primary text-dark-primary hover:bg-dark-primary hover:text-dark-secondary px-8 py-3 rounded-lg font-semibold transition-all duration-200">
               Get In Touch
             </button>
           </div>
@@ -72,10 +72,10 @@ const HomePage: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-dark-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-primary mb-4">
               Our Services
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             From intelligent automation to custom AI software, we provide powerful solutions that drive real results for forward-thinking businesses.
             </p>
           </div>
@@ -84,23 +84,23 @@ const HomePage: React.FC = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-dark-secondary/50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+                className="bg-dark-secondary/50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-700"
               >
-                <div className="text-primary dark:text-dark-primary mb-4">
+                <div className="text-dark-primary mb-4">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-secondary dark:text-dark-primary mb-3">
+                <h3 className="text-xl font-bold text-dark-primary mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-300 mb-4">
                   {service.description}
                 </p>
                 {index === 0 ? (
-                  <button className="text-primary dark:text-dark-primary hover:text-primary/80 font-semibold flex items-center gap-2 transition-colors duration-200">
+                  <button className="text-dark-primary hover:text-dark-primary/80 font-semibold flex items-center gap-2 transition-colors duration-200">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </button>
                 ) : (
-                  <button className="text-primary dark:text-dark-primary hover:text-primary/80 font-semibold flex items-center gap-2 transition-colors duration-200">
+                  <button className="text-dark-primary hover:text-dark-primary/80 font-semibold flex items-center gap-2 transition-colors duration-200">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </button>
                 )}
@@ -111,13 +111,13 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-dark-secondary/30">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-secondary/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-dark-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-primary mb-4">
               Trusted by Industry Leaders
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-300">
             Our clients trust us to deliver exceptional results, from startups to established enterprises.
             </p>
           </div>
@@ -127,7 +127,7 @@ const HomePage: React.FC = () => {
               {clients.map((client, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-dark-secondary/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center border border-gray-100 dark:border-gray-700 flex-shrink-0"
+                  className="bg-dark-secondary/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center border border-gray-700 flex-shrink-0"
                 >
                   <img src={client} alt="Client Logo" className="mx-auto h-20 object-contain" />
                 </div>
@@ -141,7 +141,7 @@ const HomePage: React.FC = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-dark-primary mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-primary mb-4">
               What Our Clients Say
             </h2>
           </div>
@@ -150,24 +150,24 @@ const HomePage: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-dark-secondary/50 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700"
+                className="bg-dark-secondary/50 p-8 rounded-xl shadow-lg border border-gray-700"
               >
-                <Quote className="w-8 h-8 text-primary dark:text-dark-primary mb-4" />
-                <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+                <Quote className="w-8 h-8 text-dark-primary mb-4" />
+                <p className="text-gray-300 mb-6 text-lg leading-relaxed">
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-semibold text-secondary dark:text-dark-primary">
+                    <p className="font-semibold text-dark-primary">
                       {testimonial.author}
                     </p>
-                    <p className="text-gray-500 dark:text-gray-400">
+                    <p className="text-gray-500">
                       {testimonial.company}
                     </p>
                   </div>
                   <div className="flex gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-primary dark:text-dark-primary fill-current" />
+                      <Star key={i} className="w-5 h-5 text-dark-primary fill-current" />
                     ))}
                   </div>
                 </div>
@@ -178,16 +178,16 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary/10 to-secondary/10 dark:from-dark-primary/10 dark:to-dark-secondary/20">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-dark-primary/10 to-dark-secondary/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-dark-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-dark-primary mb-4">
             Ready to Start Your Project?
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-lg text-gray-300 mb-8">
             Let's discuss how we can help bring your vision to life
           </p>
-          <div className="flex items-center justify-center gap-4 text-secondary dark:text-dark-primary">
-            <CheckCircle className="w-5 h-5 text-primary dark:text-dark-primary" />
+          <div className="flex items-center justify-center gap-4 text-dark-primary">
+            <CheckCircle className="w-5 h-5 text-dark-primary" />
             <span>hello@creativestudio.com</span>
             <span>|</span>
             <span>+1 (555) 123-4567</span>

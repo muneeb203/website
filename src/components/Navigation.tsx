@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu, X, Briefcase } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
 
 
 interface NavigationProps {
@@ -24,14 +23,14 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
   };
 
   return (
-    <nav className="bg-white dark:bg-dark-secondary shadow-lg border-b-2 border-primary dark:border-dark-primary transition-colors duration-300">
+    <nav className="bg-dark-secondary shadow-lg border-b-2 border-dark-primary transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
             <button
               onClick={() => handleNavClick('home')}
-              className="flex items-center space-x-2 text-secondary dark:text-dark-primary hover:text-primary dark:hover:text-white transition-colors duration-200"
+              className="flex items-center space-x-2 text-dark-primary hover:text-white transition-colors duration-200"
             >
               <span className="font-bold text-xl">Codara co.</span>
             </button>
@@ -46,8 +45,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
                   onClick={() => handleNavClick(item.id)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
                     currentPage === item.id
-                      ? 'bg-primary dark:bg-dark-primary text-white dark:text-dark-secondary'
-                      : 'text-secondary dark:text-dark-primary hover:text-primary dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
+                      ? 'bg-dark-primary text-dark-secondary'
+                      : 'text-dark-primary hover:text-white hover:bg-dark-primary/20'
                   }`}
                 >
                   {item.label}
@@ -56,14 +55,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
             </div>
           </div>
 
-<<<<<<< HEAD
-          {/* Theme Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
-            <ThemeToggle />
-          </div>
-=======
           {/* Theme toggle removed for dark-only mode */}
->>>>>>> 979ed21 (Initial commit)
         </div>
       </div>
 

@@ -39,6 +39,11 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setIsDark(!isDark);
   };
 
+  React.useEffect(() => {
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+  }, []);
+
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
       {children}

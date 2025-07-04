@@ -28,59 +28,59 @@ const ProjectsPage: React.FC = () => {
     },
     {
       id: 2,
-      title: 'E-commerce Platform',
-      category: 'web',
-      description: 'Modern, responsive e-commerce platform built with React and Node.js, featuring advanced filtering and seamless checkout.',
-      image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tags: ['React', 'E-commerce', 'Responsive Design'],
-      date: '2024-02-20',
-      status: 'completed',
-      client: 'Digital Dynamics'
+      title: 'HerHaq',
+      category: 'AI-Powered Solutions',
+      description: 'Developed a platform that helps women consult regarding legal action to problems they face.',
+      image: 'src\\assets\\images\\project\\herhaq.png',
+      tags: ['AI', 'Legal Action', 'Women Empowerment'],
+      date: '',
+      status: 'ongoing',
+      client: ''
     },
     {
       id: 3,
-      title: 'Social Media Campaign',
-      category: 'marketing',
-      description: 'Comprehensive social media strategy and campaign that increased engagement by 300% across all platforms.',
-      image: 'https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tags: ['Social Media', 'Content Strategy', 'Analytics'],
-      date: '2024-03-10',
-      status: 'completed',
-      client: 'Creative Solutions'
-    },
-    {
-      id: 4,
-      title: 'Mobile App Design',
-      category: 'design',
-      description: 'Intuitive mobile app design for a fitness tracking application with focus on user experience and accessibility.',
-      image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tags: ['Mobile Design', 'UX/UI', 'Prototyping'],
-      date: '2024-03-25',
+      title: 'Arbitrator System',
+      category: 'AI-powered Solutions',
+      description: 'Developed a system that helps in resolving contract issues in civil engineering.',
+      image: 'src\\assets\\images\\project\\arbitrator.png',
+      tags: ['AI', 'Dispute Resolution', 'Arbitration'],
+      date: '',
       status: 'ongoing',
-      client: 'FitLife App'
+      client: ''
     },
-    {
-      id: 5,
-      title: 'Corporate Website',
-      category: 'web',
-      description: 'Professional corporate website with custom CMS, blog functionality, and integrated contact system.',
-      image: 'https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tags: ['Corporate', 'CMS', 'Blog'],
-      date: '2024-04-05',
-      status: 'ongoing',
-      client: 'Global Ventures'
-    },
-    {
-      id: 6,
-      title: 'Brand Guidelines System',
-      category: 'branding',
-      description: 'Comprehensive brand guidelines system with digital brand book and asset management portal.',
-      image: 'https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tags: ['Brand Guidelines', 'Digital Assets', 'System Design'],
-      date: '2024-04-12',
-      status: 'ongoing',
-      client: 'Innovation Labs'
-    }
+    // {
+    //   id: 4,
+    //   title: 'Mobile App Design',
+    //   category: 'design',
+    //   description: 'Intuitive mobile app design for a fitness tracking application with focus on user experience and accessibility.',
+    //   image: 'https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=600',
+    //   tags: ['Mobile Design', 'UX/UI', 'Prototyping'],
+    //   date: '2024-03-25',
+    //   status: 'ongoing',
+    //   client: 'FitLife App'
+    // },
+    // {
+    //   id: 5,
+    //   title: 'Corporate Website',
+    //   category: 'web',
+    //   description: 'Professional corporate website with custom CMS, blog functionality, and integrated contact system.',
+    //   image: 'https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=600',
+    //   tags: ['Corporate', 'CMS', 'Blog'],
+    //   date: '2024-04-05',
+    //   status: 'ongoing',
+    //   client: 'Global Ventures'
+    // },
+    // {
+    //   id: 6,
+    //   title: 'Brand Guidelines System',
+    //   category: 'branding',
+    //   description: 'Comprehensive brand guidelines system with digital brand book and asset management portal.',
+    //   image: 'https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=600',
+    //   tags: ['Brand Guidelines', 'Digital Assets', 'System Design'],
+    //   date: '2024-04-12',
+    //   status: 'ongoing',
+    //   client: 'Innovation Labs'
+    // }
   ];
 
   const filteredProjects = selectedCategory === 'all' 
@@ -261,7 +261,14 @@ const ProjectsPage: React.FC = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
             Let's collaborate to create something extraordinary that drives results for your business.
           </p>
-          <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
+          <button
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.dispatchEvent) {
+                window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'contact' } }));
+              }
+            }}
+          >
             Get Started Today
           </button>
         </div>
