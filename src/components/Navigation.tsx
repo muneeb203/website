@@ -56,10 +56,14 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
           </div>
+=======
+          {/* Theme toggle removed for dark-only mode */}
+>>>>>>> 979ed21 (Initial commit)
         </div>
       </div>
 
