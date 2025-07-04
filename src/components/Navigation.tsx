@@ -38,7 +38,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div>
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <button
@@ -59,14 +59,6 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
           {/* Theme Toggle & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-secondary dark:text-dark-primary hover:text-primary dark:hover:text-white p-2"
-              >
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
           </div>
         </div>
       </div>
