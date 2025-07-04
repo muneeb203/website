@@ -21,13 +21,13 @@ const HomePage: React.FC = () => {
   ];
 
   const clients = [
-    'website/src/assets/images/eleve.png',
-    'src/assets/images/logo.png',
-    'src/assets/images/onecost.png',
-    'src/assets/images/pheme.png',
-    'src/assets/images/Techfest.png',
-    'src/assets/images/techmin.png',
-    'src/assets/images/eleve.png'
+    '/images/eleve.png',
+    '/images/logo.png',
+    '/images/onecost.png',
+    '/images/pheme.png',
+    '/images/Techfest.png',
+    '/images/techmin.png',
+    '/images/eleve.png'
   ];
 
   const testimonials = [ 
