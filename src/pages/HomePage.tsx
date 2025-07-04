@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
   ];
 
   const clients = [
-    'src/assets/images/eleve.png',
+    'website/src/assets/images/eleve.png',
     'src/assets/images/logo.png',
     'src/assets/images/onecost.png',
     'src/assets/images/pheme.png',
