@@ -1,83 +1,44 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Clock, MessageCircle } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const ContactPage: React.FC = () => {
-  const [formData, setFormData] = React.useState({
-    name: '',
-    email: '',
-    company: '',
-    service: '',
-    budget: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const [state, handleSubmit] = useForm("xanjkgwz");
 
   const services = [
-    'Brand Identity',
-    'Web Development',
-    'Digital Marketing',
-    'UI/UX Design',
-    'Consulting',
+    'AI Automation ',
+    'AI-Product Developement',
+    'Data Analytics',
+    'Data Visualization ',
+    'AI-Powered Solutions',
     'Other'
   ];
 
   const budgetRanges = [
-    '$5,000 - $10,000',
-    '$10,000 - $25,000',
-    '$25,000 - $50,000',
-    '$50,000+'
+    '10,000 - 20,000',
+    '20,000 - 45,000',
+    '45,000 - 100,000',
+    '100,000+'
   ];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      // Reset form after successful submission
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          service: '',
-          budget: '',
-          message: ''
-        });
-      }, 3000);
-    }, 2000);
-  };
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email Us',
-      content: 'hello@creativestudio.com',
+      content: 'muneebq2003@gmail.com',
       description: 'Send us an email anytime'
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Call Us',
-      content: '+1 (555) 123-4567',
+      content: '+92 3300 078040',
       description: 'Mon-Fri from 8am to 5pm'
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Visit Us',
-      content: '123 Creative Street, Design City, DC 12345',
-      description: 'Our office is open to visitors'
+      content: 'On-site Soon',
+      description: ''
     }
   ];
 
@@ -118,7 +79,7 @@ const ContactPage: React.FC = () => {
       {/* Contact Form & Info */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-white dark:bg-dark-secondary/50 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
               <div className="mb-8">
@@ -130,7 +91,7 @@ const ContactPage: React.FC = () => {
                 </p>
               </div>
 
-              {isSubmitted ? (
+              {state.succeeded ? (
                 <div className="text-center py-12">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-secondary dark:text-dark-primary mb-2">
@@ -152,8 +113,6 @@ const ContactPage: React.FC = () => {
                         id="name"
                         name="name"
                         required
-                        value={formData.name}
-                        onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:border-transparent bg-white dark:bg-dark-secondary text-secondary dark:text-dark-primary transition-colors duration-200"
                         placeholder="Your full name"
                       />
@@ -167,11 +126,10 @@ const ContactPage: React.FC = () => {
                         id="email"
                         name="email"
                         required
-                        value={formData.email}
-                        onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:border-transparent bg-white dark:bg-dark-secondary text-secondary dark:text-dark-primary transition-colors duration-200"
                         placeholder="your@email.com"
                       />
+                      <ValidationError prefix="Email" field="email" errors={state.errors} />
                     </div>
                   </div>
 
@@ -183,8 +141,6 @@ const ContactPage: React.FC = () => {
                       type="text"
                       id="company"
                       name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:border-transparent bg-white dark:bg-dark-secondary text-secondary dark:text-dark-primary transition-colors duration-200"
                       placeholder="Your company name"
                     />
@@ -195,35 +151,25 @@ const ContactPage: React.FC = () => {
                       <label htmlFor="service" className="block text-sm font-medium text-secondary dark:text-dark-primary mb-2">
                         Service Needed
                       </label>
-                      <select
+                      <input
+                        type="text"
                         id="service"
                         name="service"
-                        value={formData.service}
-                        onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:border-transparent bg-white dark:bg-dark-secondary text-secondary dark:text-dark-primary transition-colors duration-200"
-                      >
-                        <option value="">Select a service</option>
-                        {services.map((service) => (
-                          <option key={service} value={service}>{service}</option>
-                        ))}
-                      </select>
+                        placeholder="Service needed"
+                      />
                     </div>
                     <div>
                       <label htmlFor="budget" className="block text-sm font-medium text-secondary dark:text-dark-primary mb-2">
                         Budget Range
                       </label>
-                      <select
+                      <input
+                        type="text"
                         id="budget"
                         name="budget"
-                        value={formData.budget}
-                        onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:border-transparent bg-white dark:bg-dark-secondary text-secondary dark:text-dark-primary transition-colors duration-200"
-                      >
-                        <option value="">Select budget range</option>
-                        {budgetRanges.map((range) => (
-                          <option key={range} value={range}>{range}</option>
-                        ))}
-                      </select>
+                        placeholder="Budget range"
+                      />
                     </div>
                   </div>
 
@@ -236,19 +182,18 @@ const ContactPage: React.FC = () => {
                       name="message"
                       required
                       rows={6}
-                      value={formData.message}
-                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-dark-primary focus:border-transparent bg-white dark:bg-dark-secondary text-secondary dark:text-dark-primary transition-colors duration-200 resize-none"
                       placeholder="Tell us about your project, goals, and any specific requirements..."
                     />
+                    <ValidationError prefix="Message" field="message" errors={state.errors} />
                   </div>
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={state.submitting}
                     className="w-full bg-primary hover:bg-primary/90 disabled:bg-primary/50 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    {isSubmitting ? (
+                    {state.submitting ? (
                       <>
                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
                         Sending...
