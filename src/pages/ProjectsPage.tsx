@@ -6,23 +6,25 @@ const ProjectsPage: React.FC = () => {
 
   const categories = [
     { id: 'all', label: 'All Projects' },
-    { id: 'branding', label: 'Branding' },
-    { id: 'web', label: 'Web Development' },
-    { id: 'marketing', label: 'Digital Marketing' },
-    { id: 'design', label: 'UI/UX Design' }
+    { id: 'AI-Powered Solutions', label: 'AI-Powered Solutions' },
+    { id: 'Data Insights', label: 'Data Insights' },
+    { id: 'AI Automation', label: 'AI Automation' },
+    { id: 'Web Development', label: 'Web Development' },
+    { id: 'Digital Marketing', label: 'Digital Marketing' },
+    { id: 'UI/UX Design', label: 'UI/UX Design' }
   ];
 
   const projects = [
     {
       id: 1,
-      title: 'TechCorp Rebrand',
-      category: 'branding',
-      description: 'Complete brand identity redesign for a leading technology company, including logo, color palette, and brand guidelines.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-      tags: ['Brand Identity', 'Logo Design', 'Guidelines'],
-      date: '2024-01-15',
+      title: 'Attendance System based on Facial Recognition',
+      category: 'AI-Powered Solutions',
+      description: 'Developed an attendance system using facial recognition technology to streamline attendance tracking in educational institutions.',
+      image: 'src\\assets\\images\\project\\attendance.png',
+      tags: ['AI', 'Facial Recognition', 'Attendance System'],
+      date: '2025-05-15',
       status: 'completed',
-      client: 'TechCorp Inc.'
+      client: ''
     },
     {
       id: 2,
@@ -167,7 +169,14 @@ const ProjectsPage: React.FC = () => {
                     <h3 className="text-xl font-bold text-secondary dark:text-dark-primary">
                       {project.title}
                     </h3>
-                    <button className="p-2 text-secondary dark:text-dark-primary hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-dark-primary/10 rounded-full transition-all duration-200">
+                    <button
+                      className="p-2 text-secondary dark:text-dark-primary hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-dark-primary/10 rounded-full transition-all duration-200"
+                      onClick={() => {
+                        if (project.title.toLowerCase().includes('attendance') || project.title.toLowerCase().includes('facial recog')) {
+                          window.open('https://muneebnu.pythonanywhere.com/', '_blank');
+                        }
+                      }}
+                    >
                       <ExternalLink className="w-5 h-5" />
                     </button>
                   </div>
