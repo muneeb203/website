@@ -21,8 +21,13 @@ const HomePage: React.FC = () => {
   ];
 
   const clients = [
-    'TechCorp Inc.', 'Creative Solutions', 'Digital Dynamics', 'Innovation Labs',
-    'Future Systems', 'Global Ventures', 'NextGen Media', 'Smart Solutions'
+    'src/assets/images/eleve.png',
+    'src/assets/images/logo.png',
+    'src/assets/images/onecost.png',
+    'src/assets/images/pheme.png',
+    'src/assets/images/Techfest.png',
+    'src/assets/images/techmin.png',
+    'src/assets/images/eleve.png'
   ];
 
   const testimonials = [ 
@@ -117,17 +122,17 @@ const HomePage: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {clients.map((client, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-dark-secondary/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center border border-gray-100 dark:border-gray-700"
-              >
-                <p className="font-semibold text-secondary dark:text-dark-primary">
-                  {client}
-                </p>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <div className="flex gap-8 items-center py-4" style={{ minWidth: 'max-content' }}>
+              {clients.map((client, index) => (
+                <div
+                  key={index}
+                  className="bg-white dark:bg-dark-secondary/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center border border-gray-100 dark:border-gray-700 flex-shrink-0"
+                >
+                  <img src={client} alt="Client Logo" className="mx-auto h-20 object-contain" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
