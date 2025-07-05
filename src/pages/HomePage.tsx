@@ -202,9 +202,9 @@ const HomePage: React.FC = () => {
           </p>
           <div className="flex items-center justify-center gap-4 text-dark-primary">
             <CheckCircle className="w-5 h-5 text-dark-primary" />
-            <span>hello@creativestudio.com</span>
+            <span>codara@gmail.com</span>
             <span>|</span>
-            <span>+1 (555) 123-4567</span>
+            <span>+92 330 0078040</span>
           </div>
         </div>
       </section>
