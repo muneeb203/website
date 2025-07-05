@@ -4,15 +4,15 @@ import { Linkedin, Twitter, Mail, Star } from 'lucide-react';
 const TeamPage: React.FC = () => {
   const teamMembers = [
     {
-      name: 'Muneeb',
-      role: 'Creative Director',
-      bio: 'With over 10 years of experience in brand identity and digital design, Alex leads our creative vision and ensures every project exceeds expectations.',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
+      name: 'Muneeb Qureshi',
+      role: '',
+      bio: '',
+      image: '',
       specialties: ['Brand Identity', 'Art Direction', 'Strategy'],
       social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'alex@creativestudio.com'
+        linkedin: 'linkedin.com/in/muneebqureshi2003',
+        twitter: '',
+        email: 'muneebq2003@gmail.com'
       }
     },
     {
