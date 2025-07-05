@@ -42,7 +42,7 @@ const ProjectsPage: React.FC = () => {
       title: 'Arbitrator System',
       category: 'AI-powered Solutions',
       description: 'Developed a system that helps in resolving contract issues in civil engineering.',
-      image: '/images/project/arbitrator.png',
+      image: 'images/project/arbitrator.png',
       tags: ['AI', 'Dispute Resolution', 'Arbitration'],
       date: '',
       status: 'ongoing',
