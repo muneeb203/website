@@ -4,7 +4,7 @@ import { Linkedin, Twitter, Mail, Star } from 'lucide-react';
 const TeamPage: React.FC = () => {
   const teamMembers = [
     {
-      name: 'Alex Chen',
+      name: 'Muneeb',
       role: 'Creative Director',
       bio: 'With over 10 years of experience in brand identity and digital design, Alex leads our creative vision and ensures every project exceeds expectations.',
       image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
@@ -63,18 +63,7 @@ const TeamPage: React.FC = () => {
         email: 'david@creativestudio.com'
       }
     },
-    {
-      name: 'Lisa Wang',
-      role: 'Brand Strategist',
-      bio: 'Lisa helps brands discover their unique voice and position in the market. Her strategic insights drive brand growth and customer loyalty.',
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specialties: ['Brand Strategy', 'Market Research', 'Content Strategy'],
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'lisa@creativestudio.com'
-      }
-    }
+   
   ];
 
   return (
@@ -201,7 +190,14 @@ const TeamPage: React.FC = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
             Our team is excited to collaborate on your next project. Let's create something amazing together.
           </p>
-          <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
+          <button
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.dispatchEvent) {
+                window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'contact' } }));
+              }
+            }}
+          >
             Start a Project
           </button>
         </div>

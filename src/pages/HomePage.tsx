@@ -58,10 +58,24 @@ const HomePage: React.FC = () => {
           We build cutting-edge AI solutions that transform ideas into reality. Your ambition, powered by our expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <button className="bg-dark-primary text-dark-secondary px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105">
+            <button
+              className="bg-dark-primary text-dark-secondary px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.dispatchEvent) {
+                  window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'projects' } }));
+                }
+              }}
+            >
               View Our Work
             </button>
-            <button className="border-2 border-dark-primary text-dark-primary hover:bg-dark-primary hover:text-dark-secondary px-8 py-3 rounded-lg font-semibold transition-all duration-200">
+            <button
+              className="border-2 border-dark-primary text-dark-primary hover:bg-dark-primary hover:text-dark-secondary px-8 py-3 rounded-lg font-semibold transition-all duration-200"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.dispatchEvent) {
+                  window.dispatchEvent(new CustomEvent('navigate', { detail: { page: 'contact' } }));
+                }
+              }}
+            >
               Get In Touch
             </button>
           </div>
